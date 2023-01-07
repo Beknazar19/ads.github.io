@@ -1,47 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
 
-	<div class="container">
-		<div class="inner">
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn1">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-			    <button class="btn" id="btn2">Add</button>
-		    </div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-			    <button class="btn" id="btn3">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn4">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn5">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="Burger" class="img">
-				<button class="btn" id="btn6">Add</button>
-			</div>
-		</div>
-	</div>
-	<div class="usercard" id="usercard"></div>
-	
+    <table>
+        <caption>Мое предложение</caption>
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Выбрать валюту</th>
+            <th scope="col">Наличка/карта</th>
+            <th scope="col">Печать валюты</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                Покупаю
+            </td>
+            <td>
+                <label for="select_group_1">
+                    <select id="select_group_1">
+                        <option value="1" selected="selected">доллар</option>
+                        <option value="5">сом</option>
+                        <option value="2">евро</option>
+                        <option value="3">рубль</option>
+                        <option value="6">тенге</option>
+                        <option value="7">сум</option>
+                        <option value="4">лирa</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label for="select_group_2">
+                    <select id="select_group_2">
+                        <option value="3">все</option>
+                        <option value="1">наличка</option>
+                        <option value="2">карта</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label for="select_group_3">
+                    <select id="select_group_3">
+                        <option value="3">все</option>
+                        <option value="1">без печати</option>
+                        <option value="2">с печатью</option>
+                        
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Продаю
+            </td>
+            <td>
+                <label for="select_group_4">
+                    <select id="select_group_4">
+                        <option value="1">доллар</option>
+                        <option value="5" selected="selected">сом</option>
+                        <option value="2">евро</option>
+                        <option value="3">рубль</option>
+                        <option value="6">тенге</option>
+                        <option value="7">сум</option>
+                        <option value="4">лирa</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label for="select_group_5">
+                    <select id="select_group_5">
+                        <option value="3">все</option>
+                        <option value="1">наличка</option>
+                        <option value="2">карта</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <label for="select_group_6">
+                    <select id="select_group_6">
+                        <option value="3">все</option>
+                        <option value="1">без печати</option>
+                        <option value="2">с печатью</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td data-label="Due Date">
+                <label for="rate">
+                    По курсу
+                    <input id="rate" type="tel" class="placeholder-rate" 
+                    type="number"
+                    >
+                </label>
+            </td>
+            <td>
+                <label for="summary" id="Label_Sum">
+                    Объем 
+                </label>
+                <input id="summary" type="tel"  class="placeholder-rate">
+                
+            </td>
 
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
+            <td>
+                <label class="place-group" for="select-group 7">
+                    Место
+                    <select id="select-group 7">
+                        <option value="14">все</option>
+                        <option value="1">Бишкек</option>
+                        <option value="2">Ош</option>
+                        <option value="3">Дж-Абад</option>
+                        <option value="4">Кара-Суу</option>
+                        <option value="5">Токмок</option>
+                        <option value="6">Кызыл-Кия</option>
+                        <option value="7">Узген</option>
+                        <option value="8">Каракол</option>
+                        <option value="9">Кара-Балта</option>
+                        <option value="10">Сузак</option>
+                        <option value="11">Нарын</option>
+                        <option value="12">Талас</option>
+                        <option value="13">другое</option>
+                        
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button-submit">
+                    Готово
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+
+        var val_ask = document.getElementById("select_group_1");
+        var val_bid = document.getElementById("select_group_4");
+        
+        function onChange() {
+            var val_ask_num = val_ask.value;
+            var val_ask_text = val_ask.options[val_ask.selectedIndex].text;
+
+            var val_bid_num = val_bid.value;
+            var val_bid_text = val_bid.options[val_bid.selectedIndex].text;
+            
+
+
+            let searchValue = Math.min(val_ask_num, val_bid_num);
+            let selectElement = document.getElementById('select_group_1');
+            let options = selectElement.options;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].value == searchValue) {
+                console.log(options[i].text, document.getElementById('summary').innerHTML);
+
+                document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
+                // + options[i].text;
+
+                break;
+                } }
+
+        }
+        val_ask.onchange = onChange;
+        val_bid.onchange = onChange;
+        
+        onChange();
+
+
+
+
+        //задаем формат для поле объем, чтобы только цифры были
+        document.getElementById('summary').addEventListener('input', function() {
+            this.value = this.value.replace(/[^\d]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
+        });
+
+        //задаем формат для поле курс, чтобы только цифры были
+        document.getElementById('rate').addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9.]/g, '', '')
+            // .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$0 ');
+        });
+
+
+
+      </script>
 </body>
 </html>
-
-<!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
