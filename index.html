@@ -17,7 +17,7 @@
          font-size: 18px;
       } */
 
-      .hint{
+      /* .hint{
          color: var(--tg-theme-hint-color);
       }
 
@@ -38,7 +38,7 @@
 
       #usercard{
          text-align: center;
-      }
+      } */
    
       .container {
             display: flex;
@@ -160,7 +160,7 @@
    // });
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("from web: ");
+      tg.sendData(op1, op2);
       tg.window.close();
       //при клике на основную кнопку отправляем данные в строковом виде
    });
