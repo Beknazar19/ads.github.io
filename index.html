@@ -1,153 +1,185 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Test Telegram WebApps API</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+
+   <style>
+      body{
+         color: var(--tg-theme-text-color);
+         background: var(--tg-theme-bg-color);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-size: 18px;
+      }
+
+      .hint{
+         color: var(--tg-theme-hint-color);
+      }
+
+      .link{
+         color: var(--tg-theme-link-color);
+      }
+
+      .button{
+         background: var(--tg-theme-button-color);
+         color: var(--tg-theme-button-text-color);
+         border: none;
+         font-size: 18px;
+      }
+
+      .button:not(:last-child){
+         margin-bottom: 20px
+      }
+
+      #usercard{
+         text-align: center;
+      }
+   
+      .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+        .column {
+            width: 45%;
+            text-align: center;
+            margin: -10%;
+        }
+        select {
+            margin-bottom: 7px;
+        }
+
+   </style>
 </head>
+
 <body>
-
-    <table>
-        <caption>Мое предложение</caption>
-        <thead>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Выбрать валюту</th>
-            <th scope="col">Наличка/карта</th>
-            <th scope="col">Печать валюты</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                Покупаю
-            </td>
-            <td>
-                <label for="select_group_1">
-                    <select id="select_group_1">
-                        <option value="1" selected="selected">доллар</option>
-                        <option value="5">сом</option>
-                        <option value="2">евро</option>
-                        <option value="3">рубль</option>
-                        <option value="6">тенге</option>
-                        <option value="7">сум</option>
-                        <option value="4">лирa</option>
-                    </select>
-                </label>
-            </td>
-            <td>
-                <label for="select_group_2">
-                    <select id="select_group_2">
-                        <option value="3">все</option>
-                        <option value="1">наличка</option>
-                        <option value="2">карта</option>
-                    </select>
-                </label>
-            </td>
-            <td>
-                <label for="select_group_3">
-                    <select id="select_group_3">
-                        <option value="3">все</option>
-                        <option value="1">без печати</option>
-                        <option value="2">с печатью</option>
-                        
-                    </select>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Продаю
-            </td>
-            <td>
-                <label for="select_group_4">
-                    <select id="select_group_4">
-                        <option value="1">доллар</option>
-                        <option value="5" selected="selected">сом</option>
-                        <option value="2">евро</option>
-                        <option value="3">рубль</option>
-                        <option value="6">тенге</option>
-                        <option value="7">сум</option>
-                        <option value="4">лирa</option>
-                    </select>
-                </label>
-            </td>
-            <td>
-                <label for="select_group_5">
-                    <select id="select_group_5">
-                        <option value="3">все</option>
-                        <option value="1">наличка</option>
-                        <option value="2">карта</option>
-                    </select>
-                </label>
-            </td>
-            <td>
-                <label for="select_group_6">
-                    <select id="select_group_6">
-                        <option value="3">все</option>
-                        <option value="1">без печати</option>
-                        <option value="2">с печатью</option>
-                    </select>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td data-label="Due Date">
-                <label for="rate">
-                    По курсу
-                    <input id="rate" type="tel" class="placeholder-rate" 
-                    type="number"
-                    >
-                </label>
-            </td>
-            <td>
-                <label for="summary" id="Label_Sum">
-                    Объем 
-                </label>
-                <input id="summary" type="tel"  class="placeholder-rate">
-                
-            </td>
-
-            <td>
-                <label class="place-group" for="select-group 7">
-                    Место
-                    <select id="select-group 7">
-                        <option value="14">все</option>
-                        <option value="1">Бишкек</option>
-                        <option value="2">Ош</option>
-                        <option value="3">Дж-Абад</option>
-                        <option value="4">Кара-Суу</option>
-                        <option value="5">Токмок</option>
-                        <option value="6">Кызыл-Кия</option>
-                        <option value="7">Узген</option>
-                        <option value="8">Каракол</option>
-                        <option value="9">Кара-Балта</option>
-                        <option value="10">Сузак</option>
-                        <option value="11">Нарын</option>
-                        <option value="12">Талас</option>
-                        <option value="13">другое</option>
-                        
-                    </select>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="button-submit">
-                    Готово
-                </button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
-
+   <div class="container">
+       <div class="column">
+           <label for="column1" >Покупаю</label>
+           <br> 
+           <select id="select_group_1">
+               <option value="1" selected="selected">доллар</option>
+               <option value="5">сом</option>
+               <option value="2">евро</option>
+               <option value="3">рубль</option>
+               <option value="6">тенге</option>
+               <option value="7">сум</option>
+               <option value="4">лирa</option>
+           </select>
+           <br>
+           <select id="select_group_2">
+               <option value="3">все</option>
+               <option value="1">наличка</option>
+               <option value="2">карта</option>
+           </select>
+           <br>
+           <select id="select_group_3">
+               <option value="3">все</option>
+               <option value="1">без печати</option>
+               <option value="2">с печатью</option>
+           </select>
+       </div>
+       <div class="column">
+           <label for="column2">Продаю</label>
+           <br>
+           <select id="select_group_4">
+               <option value="1">доллар</option>
+               <option value="5" selected="selected">сом</option>
+               <option value="2">евро</option>
+               <option value="3">рубль</option>
+               <option value="6">тенге</option>
+               <option value="7">сум</option>
+               <option value="4">лирa</option>
+           </select>
+           <br>
+           <select id="select_group_5">
+               <option value="3">все</option>
+               <option value="1">наличка</option>
+               <option value="2">карта</option>
+           </select>
+           <br>
+           <select id="select_group_6">
+               <option value="3">все</option>
+               <option value="1">без печати</option>
+               <option value="2">с печатью</option>
+           </select>
+       </div>
+   </div>
 </body>
+
+
+<script>
+   let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+   tg.expand(); //расширяем на все окно  
+
+   tg.MainButton.text = "Готово"; //изменяем текст кнопки 
+   tg.MainButton.setText("Готово for Bek"); //изменяем текст кнопки иначе
+   tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+   tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+   tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+
+   let op1 =  document.getElementById("select_group_1");
+   let op2 =  document.getElementById("select_group_2");
+   let op3 =  document.getElementById("select_group_3");
+   let op4 =  document.getElementById("select_group_4");
+   let op5 =  document.getElementById("select_group_5");
+   let op6 =  document.getElementById("select_group_6");
+   
+
+   // let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
+
+   // btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+   //    if (tg.MainButton.isVisible){ //если кнопка показана 
+   //       tg.MainButton.hide() //скрываем кнопку 
+   //    }
+   //    else{ //иначе
+   //       tg.MainButton.show() //показываем 
+   //    }
+   // });
+
+   // let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
+   // btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+   //    if (tg.MainButton.isActive){ //если кнопка показана 
+   //       tg.MainButton.setParams({"color": "#E0FFFF"}); //меняем цвет
+   //       tg.MainButton.disable() //скрываем кнопку 
+   //    }
+   //    else{ //иначе
+   //       tg.MainButton.setParams({"color": "#143F6B"}); //меняем цвет
+   //       tg.MainButton.enable() //показываем 
+   //    }
+   // });
+
+   Telegram.WebApp.onEvent('mainButtonClicked', function(){
+      tg.sendData("from web: ", op1, op2); 
+      //при клике на основную кнопку отправляем данные в строковом виде
+   });
+
+
+   let usercard = document.getElementById("usercard"); //получаем блок usercard 
+
+   let profName = document.createElement('p'); //создаем параграф
+   profName.innerText = `${tg.initDataUnsafe.user.first_name}
+   ${tg.initDataUnsafe.user.last_name}
+   ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+   //выдем имя, "фамилию", через тире username и код языка
+   usercard.appendChild(profName); //добавляем 
+
+   let userid = document.createElement('p'); //создаем еще параграф 
+   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+   usercard.appendChild(userid); //добавляем
+
+
+   //работает только в attachment menu
+   // let pic = document.createElement('img'); //создаем img
+   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
+   // usercard.appendChild(pic); //добавляем элемент в карточку 
+</script>
 </html>
