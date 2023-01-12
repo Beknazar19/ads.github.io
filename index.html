@@ -162,10 +162,12 @@
    var dict = {"one" : [15, 4.5],
             "two" : [34, 3.3],
             "three" : [67, 5.0],
-            "four" : [32, 4.1]}
+            "four" : [32, 4.1]};
+   
+   var dictstring = JSON.stringify(dict);
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData(dict);
+      tg.sendData(dictstring);
       tg.window.close();
       //при клике на основную кнопку отправляем данные в строковом виде
    });
