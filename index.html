@@ -128,12 +128,12 @@
    tg.MainButton.show()
    tg.MainButton.enable()
    
-   let op1 =  document.getElementById("select_group_1").value.options[e.selectedIndex].text;
-   let op2 =  document.getElementById("select_group_2").selecte
-   let op3 =  document.getElementById("select_group_3");
-   let op4 =  document.getElementById("select_group_4");
-   let op5 =  document.getElementById("select_group_5");
-   let op6 =  document.getElementById("select_group_6");
+   let op1 =  document.getElementById("select_group_1").value;
+   let op2 =  document.getElementById("select_group_2").value;
+   let op3 =  document.getElementById("select_group_3").value;
+   let op4 =  document.getElementById("select_group_4").value;
+   let op5 =  document.getElementById("select_group_5").value;
+   let op6 =  document.getElementById("select_group_6").value;
    
 
    // let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
@@ -159,11 +159,17 @@
    //    }
    // });
    
-   var dict = {"one" : [15, 4.5],
-            "two" : [34, 3.3],
-            "three" : [67, 5.0],
-            "four" : [32, 4.1]};
-   
+   var dict = {
+"select_group_1" : opt1,
+"select_group_2" : opt2,
+"select_group_3" : opt3,
+"select_group_4" : opt4,
+"select_group_5" : opt5,
+"select_group_6" : opt6 }
+
+
+      
+
    var dictstring = JSON.stringify(dict);
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
