@@ -128,8 +128,8 @@
    tg.MainButton.show()
    tg.MainButton.enable()
    
-   let op1 =  document.getElementById("select_group_1").value;
-   let op2 =  document.getElementById("select_group_2");
+   let op1 =  document.getElementById("select_group_1").value.options[e.selectedIndex].text;
+   let op2 =  document.getElementById("select_group_2").selecte
    let op3 =  document.getElementById("select_group_3");
    let op4 =  document.getElementById("select_group_4");
    let op5 =  document.getElementById("select_group_5");
@@ -159,9 +159,13 @@
    //    }
    // });
    
-   
+   var dict = {"one" : [15, 4.5],
+            "two" : [34, 3.3],
+            "three" : [67, 5.0],
+            "four" : [32, 4.1]}
+
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData(op1);
+      tg.sendData(dict);
       tg.window.close();
       //при клике на основную кнопку отправляем данные в строковом виде
    });
