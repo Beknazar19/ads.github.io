@@ -125,7 +125,9 @@
    tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
    tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
    tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-
+   tg.MainButton.show()
+   tg.MainButton.enable()
+   
    let op1 =  document.getElementById("select_group_1");
    let op2 =  document.getElementById("select_group_2");
    let op3 =  document.getElementById("select_group_3");
@@ -158,7 +160,8 @@
    // });
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("from web: "); 
+      tg.sendData("from web: ");
+      tg.window.close();
       //при клике на основную кнопку отправляем данные в строковом виде
    });
 
@@ -177,7 +180,7 @@
    // usercard.appendChild(userid); //добавляем
 
 
-   //работает только в attachment menu
+   // работает только в attachment menu
    // let pic = document.createElement('img'); //создаем img
    // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
    // usercard.appendChild(pic); //добавляем элемент в карточку 
