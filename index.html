@@ -128,7 +128,7 @@
    tg.MainButton.show()
    tg.MainButton.enable()
    
-   let op1 =  document.getElementById("select_group_1");
+   let op1 =  document.getElementById("select_group_1").value;
    let op2 =  document.getElementById("select_group_2");
    let op3 =  document.getElementById("select_group_3");
    let op4 =  document.getElementById("select_group_4");
@@ -158,9 +158,10 @@
    //       tg.MainButton.enable() //показываем 
    //    }
    // });
-
+   
+   
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData(op1, op2);
+      tg.sendData(op1);
       tg.window.close();
       //при клике на основную кнопку отправляем данные в строковом виде
    });
