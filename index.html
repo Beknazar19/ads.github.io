@@ -45,15 +45,27 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            height: 100vh;
+            height: 200vh;
+
+            /* margin-left: auto;
+            margin-right: auto; */
+            /* width: 150px;
+            height: 30px; */
         }
-        .column {
-            width: 45%;
+        div.column {
+            width: 140px;
+            height: 300px;
             text-align: center;
-            margin: -10%;
+            margin: 1%;
+
+            position: relative
+        }
+        .select {
+            width: 100px;
+            height: 25px;
         }
         select {
-            margin-bottom: 7px;
+            margin-bottom: 10px;
         }
 
    </style>
@@ -64,7 +76,7 @@
        <div class="column">
            <label for="column1" >Покупаю</label>
            <br> 
-           <select id="select_group_1">
+           <select class="select" id="select_group_1">
                <option value="1" selected="selected">доллар</option>
                <option value="5">сом</option>
                <option value="2">евро</option>
@@ -74,22 +86,45 @@
                <option value="4">лирa</option>
            </select>
            <br>
-           <select id="select_group_2">
+           <select class="select" id="select_group_2">
                <option value="3">все</option>
                <option value="1">наличка</option>
                <option value="2">карта</option>
            </select>
            <br>
-           <select id="select_group_3">
+           <select class="select" id="select_group_3">
                <option value="3">все</option>
                <option value="1">без печати</option>
                <option value="2">с печатью</option>
            </select>
+
+           <br>
+           <td></td>
+           <td >
+               <label for="rate">
+                   По курсу
+                   <input 
+                    id="rate" 
+                    type="tel"
+                    class = "select"  
+                   type="number"
+                   >
+               </label>
+           </td>
+           <td>
+               <label for="summary" id="Label_Sum">
+                   Объем 
+               </label>
+               <input class = "select" 
+                    id="summary" type="tel" >
+               
+           </td>
+
        </div>
        <div class="column">
            <label for="column2">Продаю</label>
            <br>
-           <select id="select_group_4">
+           <select class="select" id="select_group_4">
                <option value="1">доллар</option>
                <option value="5" selected="selected">сом</option>
                <option value="2">евро</option>
@@ -99,105 +134,44 @@
                <option value="4">лирa</option>
            </select>
            <br>
-           <select id="select_group_5">
+           <select class="select" id="select_group_5">
                <option value="3">все</option>
                <option value="1">наличка</option>
                <option value="2">карта</option>
            </select>
            <br>
-           <select id="select_group_6">
+           <select class="select" id="select_group_6">
                <option value="3">все</option>
                <option value="1">без печати</option>
                <option value="2">с печатью</option>
            </select>
+           <td>
+            <label class="select" for="select-group_7">
+                Место
+                <select id="select-group 7">
+                    <option value="14">все</option>
+                    <option value="1">Бишкек</option>
+                    <option value="2">Ош</option>
+                    <option value="3">Дж-Абад</option>
+                    <option value="4">Кара-Суу</option>
+                    <option value="5">Токмок</option>
+                    <option value="6">Кызыл-Кия</option>
+                    <option value="7">Узген</option>
+                    <option value="8">Каракол</option>
+                    <option value="9">Кара-Балта</option>
+                    <option value="10">Сузак</option>
+                    <option value="11">Нарын</option>
+                    <option value="12">Талас</option>
+                    <option value="13">другое</option>
+                    
+                </select>
+            </label>
+        </td>
        </div>
    </div>
 </body>
 
 
-<script>
-   let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+<script src="app.js"></script>
 
-   tg.expand(); //расширяем на все окно  
-
-   tg.MainButton.text = "Готово"; //изменяем текст кнопки 
-   tg.MainButton.setText("Готово for Bek"); //изменяем текст кнопки иначе
-   tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-   tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
-   tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-   tg.MainButton.show()
-   tg.MainButton.enable()
-   
-   var opt1 =  document.getElementById("select_group_1").value;
-   var opt2 =  document.getElementById("select_group_2").value;
-   var opt3 =  document.getElementById("select_group_3").value;
-   var opt4 =  document.getElementById("select_group_4").value;
-   var opt5 =  document.getElementById("select_group_5").value;
-   var opt6 =  document.getElementById("select_group_6").value;
-   
-
-   // let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
-
-   // btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   //    if (tg.MainButton.isVisible){ //если кнопка показана 
-   //       tg.MainButton.hide() //скрываем кнопку 
-   //    }
-   //    else{ //иначе
-   //       tg.MainButton.show() //показываем 
-   //    }
-   // });
-
-   // let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
-   // btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-   //    if (tg.MainButton.isActive){ //если кнопка показана 
-   //       tg.MainButton.setParams({"color": "#E0FFFF"}); //меняем цвет
-   //       tg.MainButton.disable() //скрываем кнопку 
-   //    }
-   //    else{ //иначе
-   //       tg.MainButton.setParams({"color": "#143F6B"}); //меняем цвет
-   //       tg.MainButton.enable() //показываем 
-   //    }
-   // });
-   
-   var dict = {
-      "select_group_1" : opt1,
-      "select_group_2" : opt2,
-      "select_group_3" : opt3,
-      "select_group_4" : opt4,
-      "select_group_5" : opt5,
-      "select_group_6" : opt6 
-   };
-
-
-      
-
-   var dictstring = JSON.stringify(dict);
-   console.log(dictstring);
-
-   Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData(dictstring);
-      tg.window.close();
-      //при клике на основную кнопку отправляем данные в строковом виде
-   });
-
-
-   // let usercard = document.getElementById("usercard"); //получаем блок usercard 
-
-   // let profName = document.createElement('p'); //создаем параграф
-   // profName.innerText = `${tg.initDataUnsafe.user.first_name}
-   // ${tg.initDataUnsafe.user.last_name}
-   // ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
-   // //выдем имя, "фамилию", через тире username и код языка
-   // usercard.appendChild(profName); //добавляем 
-
-   // let userid = document.createElement('p'); //создаем еще параграф 
-   // userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
-   // usercard.appendChild(userid); //добавляем
-
-
-   // работает только в attachment menu
-   // let pic = document.createElement('img'); //создаем img
-   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
-   // usercard.appendChild(pic); //добавляем элемент в карточку 
-</script>
 </html>
