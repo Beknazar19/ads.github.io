@@ -3,15 +3,15 @@ let tg = window.Telegram.WebApp;
 tg.expand(); //расширяем на все окно  
 
 
-var val_ask = document.getElementById("select_group_1");
-var val_bid = document.getElementById("select_group_4");
+var val_ask_obj = document.getElementById("select_group_1");
+var val_bid_obj = document.getElementById("select_group_4");
 
 function onChange() {
-    var val_ask_num = val_ask.value;
-    var val_ask_text = val_ask.options[val_ask.selectedIndex].text;
+    var val_ask_num = val_ask_obj.value;
+    var val_ask_text = val_ask_obj.options[val_ask.selectedIndex].text;
 
-    var val_bid_num = val_bid.value;
-    var val_bid_text = val_bid.options[val_bid.selectedIndex].text;
+    var val_bid_num = val_bid_obj.value;
+    var val_bid_text = val_bid_obj.options[val_bid.selectedIndex].text;
     
 
 
@@ -29,8 +29,8 @@ function onChange() {
         break;
         } }
 }
-val_ask.onchange = onChange;
-val_bid.onchange = onChange;
+val_ask_obj.onchange = onChange;
+val_bid_obj.onchange = onChange;
 
 onChange();
 
@@ -40,19 +40,12 @@ document.getElementById('summary').addEventListener('input', function() {
 });
 
 //задаем формат для поле курс, чтобы только цифры были
-document.getElementById('rate').addEventListener('input', function() {
+document.getElementById('kurs').addEventListener('input', function() {
     this.value = this.value.replace(/[^0-9.]/g, '', '')
     // .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$0 ');
 });
 
-function sendOptions() {
-    // Get the selected options of select forms
-    var option1 = document.getElementById("select_group_1").value;
-    var option2 = document.getElementById("select_group_2").value;
-    // Send the options to Telegram using Aiogram
-    tg.sendData(option1, option2);
-    tg.close();
-};
+
 
 
 tg.MainButton.text = "Готово"; //изменяем текст кнопки 
@@ -70,16 +63,21 @@ var value_opt4 =  document.getElementById("select_group_4").value;
 var value_opt5 =  document.getElementById("select_group_5").value;
 var value_opt6 =  document.getElementById("select_group_6").value;
 
-var val_ask = value_opt1.options[value_opt1.selectedIndex].text;
-var nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
-var stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
-var val_bid = value_opt4.options[value_opt4.selectedIndex].text;
-var nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
-var stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
+var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
+var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
+var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
+var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
+var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
+var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 
 var dict = {
-   value_opt1 : text_opt1, value_opt2 : text_opt2, value_opt3 : text_opt3, value_opt4 : text_opt4, value_opt5 : text_opt5,value_opt6 : text_opt6 
+   value_opt1 : text_val_ask, 
+   value_opt2 : text_nal_ask, 
+   value_opt3 : text_stamp_ask, 
+   value_opt4 : text_val_bid, 
+   value_opt5 : text_nal_bid,
+   value_opt6 : text_stamp_bid 
 };
 
 var dictstring = JSON.stringify(dict);
