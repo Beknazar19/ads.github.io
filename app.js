@@ -94,7 +94,9 @@ var dictstring = JSON.stringify(dict);
 console.log(dictstring);
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-   tg.sendData(dictstring);
+//    tg.sendData(dictstring);
+   tg.sendData("от веб приложения пришло");
+   
    tg.window.close();
    //при клике на основную кнопку отправляем данные в строковом виде
 });
