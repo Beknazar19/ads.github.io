@@ -1,86 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
 
-table {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    border-collapse: collapse;
-    padding: 0;
-    width: 50%;
-    table-layout: fixed;
 }
-
-select{
+div.column {
+    width: 140px;
+    height: 300px;
     text-align: center;
+    margin: 1%;
+
+    position: relative
+}
+.select {
     width: 100px;
-    height: 30px;
+    height: 25px;
 }
-
-
-
-
-table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
-    text-align: left;
-    color: cornflowerblue;
-    font-weight: bold;
+select {
+    margin-bottom: 10px;
 }
-
-table tr {
-    padding: .35em;
-}
-
-table th{
-    padding: .625em;
-    text-align: left;
-}
-table td {
-    padding: .625em;
-    text-align: left;
-}
-
-table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-
-body {
-    font-family: "Open Sans", sans-serif;
-    line-height: 1.25;
-}
-
-input{
-    margin-top: 10px;
-    width: 150px;
-    height: 30px;
-}
-
-.button-submit{
-    border: none;
-    background: cadetblue;
-    width: 100px;
-    height: 30px;
-}
-
-.place-group select{
-    margin-top: 10px;
-}
-
-
-/*
-var(--tg-theme-bg-color)
-var(--tg-theme-text-color)
-var(--tg-theme-hint-color)
-var(--tg-theme-link-color)
-var(--tg-theme-button-color)
-var(--tg-theme-button-text-color)
-*/
