@@ -61,8 +61,8 @@ tg.MainButton.setText("Готово for Bek"); //изменяем текст к�
 tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-tg.MainButton.show()
-tg.MainButton.enable()
+tg.MainButton.show();
+tg.MainButton.enable();
 
 // var value_opt1 =  document.getElementById("select_group_1").value;
 // var value_opt2 =  document.getElementById("select_group_2").value;
@@ -93,8 +93,8 @@ var dictstring = JSON.stringify(dict);
 console.log(dictstring);
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-   tg.sendData(dictstring);
-//    tg.sendData("от веб приложения пришло");
+//    tg.sendData(dictstring);
+   tg.sendData("от веб приложения ads");
    
    tg.window.close();
    //при клике на основную кнопку отправляем данные в строковом виде
