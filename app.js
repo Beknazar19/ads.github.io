@@ -95,18 +95,18 @@ var dict = {
 
 var dictstring = JSON.stringify(dict);
 console.log(dictstring);
-var MainButton = tg.MainButton;
-MainButton.onClick(function() {
-    WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
-  });
+// var MainButton = tg.MainButton;
+// MainButton.onClick(function() {
+//     WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
+//   });
 
-// Telegram.WebApp.onEvent('mainButtonClicked', function(){
-// //    tg.sendData(dictstring);
-//    tg.sendData("от веб приложения ads");
-//    tg.showAlert("Хорошо, ты нажал на главную кнопку.");
+tg.onEvent('mainButtonClicked', function(){
+//    tg.sendData(dictstring);
+   tg.sendData("от веб приложения ads");
+   tg.showAlert("Хорошо, ты нажал на главную кнопку.");
 
-//    tg.window.close();
-   //при клике на основную кнопку отправляем данные в строковом виде
-// });
+   tg.window.close();
+//    при клике на основную кнопку отправляем данные в строковом виде
+});
 
 
