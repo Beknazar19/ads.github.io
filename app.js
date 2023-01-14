@@ -1,6 +1,7 @@
 
 let tg = window.Telegram.WebApp;
 tg.expand(); //расширяем на все окно  
+tg.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
 // var val_ask = document.getElementById("select_group_1");
 // var val_bid = document.getElementById("select_group_4");
@@ -61,8 +62,8 @@ tg.MainButton.setText("Готово for Bek"); //изменяем текст к�
 tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-tg.MainButton.show();
-tg.MainButton.enable();
+// tg.MainButton.show();
+// tg.MainButton.enable();
 
 // var value_opt1 =  document.getElementById("select_group_1").value;
 // var value_opt2 =  document.getElementById("select_group_2").value;
@@ -89,15 +90,23 @@ var dict = {
 //    value_opt6 : text_stamp_bid 
 };
 
+// let tg = window.Telegram.WebApp;
+
+
 var dictstring = JSON.stringify(dict);
 console.log(dictstring);
+var MainButton = tg.MainButton;
+MainButton.onClick(function() {
+    WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
+  });
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-//    tg.sendData(dictstring);
-   tg.sendData("от веб приложения ads");
-   
-   tg.window.close();
+// Telegram.WebApp.onEvent('mainButtonClicked', function(){
+// //    tg.sendData(dictstring);
+//    tg.sendData("от веб приложения ads");
+//    tg.showAlert("Хорошо, ты нажал на главную кнопку.");
+
+//    tg.window.close();
    //при клике на основную кнопку отправляем данные в строковом виде
-});
+// });
 
 
