@@ -95,12 +95,11 @@ var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 // var dictstring = JSON.stringify(dict);
 // console.log(dictstring);
+   // tg.sendData(dictstring);
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-   // tg.sendData(dictstring);
-   tg.sendData("НАЙТИ КУРСЫ");
+   tg.sendData("Это пришло от веб страницы web app");
    tg.window.close();
-   //при клике на основную кнопку отправляем данные в строковом виде
 });
 
 
