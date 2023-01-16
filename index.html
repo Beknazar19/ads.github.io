@@ -2,15 +2,13 @@
 <html>
 <head>
    <meta charset="UTF-8">
-   <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
-
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="style.css">  
    <title>Bot valuta-obmen</title>
-
+   <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+   <link rel="stylesheet" href="style.css">  
+   
 </head>
 
 <body>
@@ -41,24 +39,6 @@
            </select>
 
            <br>
-           <td></td>
-           <td >
-               <label for="kurs">
-                   По курсу
-                   <input 
-                    id="kurs" 
-                    type="tel"
-                    class = "select"  
-                   type="number"
-                   >
-               </label>
-           </td>
-           <td>
-               <label for="summary" id="Label_Sum">
-                   Объем, в дол
-               </label>
-               <input class = "select" 
-                    id="summary" type="tel" >
                
            </td>
 
@@ -113,6 +93,8 @@
    </div>
 </body>
 
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="app.js"></script>
+
 
 </html>
