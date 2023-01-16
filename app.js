@@ -48,13 +48,6 @@
 
 
 
-
-
-
-
-
-
-
 let tg = window.Telegram.WebApp;
 // tg.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
