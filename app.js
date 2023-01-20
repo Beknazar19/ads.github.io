@@ -17,7 +17,7 @@ var dict = {
 
 tg.onEvent('mainButtonClicked', function(){
    // tg.sendData(dictstring);
-   tg.sendData("дать предложение2");
+   tg.sendData("дать предложение22");
 
    tg.window.close();
    //при клике на основную кнопку отправляем данные в строковом виде
