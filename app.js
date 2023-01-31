@@ -56,12 +56,12 @@ var value_opt4 =  document.getElementById("select_group_4").value;
 var value_opt5 =  document.getElementById("select_group_5").value;
 var value_opt6 =  document.getElementById("select_group_6").value;
 
-var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
-var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
-var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
-var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
-var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
-var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
+// var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
+// var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
+// var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
+// var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
+// var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
+// var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 
 // var jsonObject = {
@@ -74,7 +74,7 @@ var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 //     value_opt6 : text_stamp_bid
 // };
 
-var jsonObject = { "name": "John", "age": text_val_ask, "city": "New York" };
+var jsonObject = { "name": "John", "age": value_opt1, "city": "New York" };
 var jsonString = JSON.stringify(jsonObject);
 
 var  tg2 = window.Telegram.WebApp;
