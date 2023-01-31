@@ -53,13 +53,13 @@ var val_bid = document.getElementById("select_group_4");
 
 
 
-// tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-// tg2.MainButton.setText("Разместить объявление"); //изменяем текст кнопки иначе
-// tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-// tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
-// tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-// tg2.MainButton.show();
-// tg2.MainButton.enable();
+tg2.MainButton.text = "Готово"; //изменяем текст кнопки
+tg2.MainButton.setText("Разместить объявление"); //изменяем текст кнопки иначе
+tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+tg2.MainButton.show();
+tg2.MainButton.enable();
 
 // var value_opt1 =  document.getElementById("select_group_1").value;
 // var value_opt2 =  document.getElementById("select_group_2").value;
