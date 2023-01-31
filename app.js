@@ -3,35 +3,35 @@
 // tg2.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
 
-// var val_ask = document.getElementById("select_group_1");
-// var val_bid = document.getElementById("select_group_4");
+var val_ask = document.getElementById("select_group_1");
+var val_bid = document.getElementById("select_group_4");
 
-// function onChange() {
-//     var val_ask_num = val_ask.value;
-//     var val_ask_text = val_ask.options[val_ask.selectedIndex].text;
+function onChange() {
+    var val_ask_num = val_ask.value;
+    var val_ask_text = val_ask.options[val_ask.selectedIndex].text;
 
-//     var val_bid_num = val_bid.value;
-//     var val_bid_text = val_bid.options[val_bid.selectedIndex].text;
+    var val_bid_num = val_bid.value;
+    var val_bid_text = val_bid.options[val_bid.selectedIndex].text;
 
 
 
-//     let searchValue = Math.min(val_ask_num, val_bid_num);
-//     let selectElement = document.getElementById('select_group_1');
-//     let options = selectElement.options;
+    let searchValue = Math.min(val_ask_num, val_bid_num);
+    let selectElement = document.getElementById('select_group_1');
+    let options = selectElement.options;
 
-//     for (let i = 0; i < options.length; i++) {
-//         if (options[i].value == searchValue) {
-//         console.log(options[i].text, document.getElementById('summary').innerHTML);
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].value == searchValue) {
+        console.log(options[i].text, document.getElementById('summary').innerHTML);
 
-//         document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
-//         // + options[i].text;
+        document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
+        // + options[i].text;
 
-//         break;
-//         } }
-// }
+        break;
+        } }
+}
 
-// val_ask.onchange = onChange;
-// val_bid.onchange = onChange;
+val_ask.onchange = onChange;
+val_bid.onchange = onChange;
 
     // onChange();
 
@@ -64,15 +64,15 @@ document.getElementById('kurs').addEventListener('input', function() {
 // var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 
-// var dict = {
-//     type_web_msg : "from ads",
-//     value_opt1 : text_val_ask,
-//     value_opt2 : text_nal_ask,
-//     value_opt3 : text_stamp_ask,
-//     value_opt4 : text_val_bid,
-//     value_opt5 : text_nal_bid,
-//     value_opt6 : text_stamp_bid
-// };
+var dict = {
+    "type_web_msg" : "from ads",
+    // value_opt1 : text_val_ask,
+    // value_opt2 : text_nal_ask,
+    // value_opt3 : text_stamp_ask,
+    // value_opt4 : text_val_bid,
+    // value_opt5 : text_nal_bid,
+    // value_opt6 : text_stamp_bid
+};
 
 let tg2 = window.Telegram.WebApp;
 
@@ -89,8 +89,8 @@ tg2.MainButton.enable();
 
 
 tg2.onEvent('mainButtonClicked', function(){
-  // tg2.sendData(dict);
-  tg2.sendData("От страницы ADS");
+  tg2.sendData(dict);
+  // tg2.sendData("От страницы ADS");
 
   tg2.window.close();
   //при клике на основную кнопку отправляем данные в строковом виде
