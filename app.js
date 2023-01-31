@@ -74,12 +74,15 @@ var dict = {
     // value_opt6 : text_stamp_bid
 };
 
+var jsonObject = { "name": "John", "age": 30, "city": "New York" };
+var jsonString = JSON.stringify(jsonObject);
+
 var  tg2 = window.Telegram.WebApp;
 
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление2"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление3"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -89,7 +92,7 @@ tg2.MainButton.enable();
 
 
 tg2.onEvent('mainButtonClicked', function(){
-  tg2.sendData(dict);
+  tg2.sendData(jsonString);
   // tg2.sendData("От страницы ADS");
 
   tg2.window.close();
