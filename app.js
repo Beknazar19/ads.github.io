@@ -74,7 +74,7 @@ var dict = {
     // value_opt6 : text_stamp_bid
 };
 
-let tg2 = window.Telegram.WebApp;
+var  tg2 = window.Telegram.WebApp;
 
 tg2.expand(); //расширяем на все окно
 
