@@ -1,6 +1,5 @@
 
 
-let tg2 = window.Telegram.WebApp;
 // tg2.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
 
@@ -30,8 +29,8 @@ function onChange() {
         break;
         } }
 }
-// val_ask.onchange = onChange;
-// val_bid.onchange = onChange;
+val_ask.onchange = onChange;
+val_bid.onchange = onChange;
 
     // onChange();
 
@@ -74,7 +73,9 @@ var dict = {
     value_opt6 : text_stamp_bid
 };
 
-tg2.expand(); //расширяем на все окно
+let tg2 = window.Telegram.WebApp;
+
+// tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
 tg2.MainButton.setText("Разместить объявление"); //изменяем текст кнопки иначе
