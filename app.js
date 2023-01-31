@@ -65,7 +65,7 @@ document.getElementById('kurs').addEventListener('input', function() {
 
 
 var dict = {
-    "type_web_msg" : "from ads",
+    "type_web_msg" : "from Beknazar data",
     // value_opt1 : text_val_ask,
     // value_opt2 : text_nal_ask,
     // value_opt3 : text_stamp_ask,
@@ -90,7 +90,6 @@ tg2.MainButton.enable();
 
 tg2.onEvent('mainButtonClicked', function(){
   tg2.sendData(dict);
-  // tg2.sendData("От страницы ADS");
 
   tg2.window.close();
   //при клике на основную кнопку отправляем данные в строковом виде
