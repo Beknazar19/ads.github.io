@@ -75,7 +75,7 @@ var dict = {
 
 let tg2 = window.Telegram.WebApp;
 
-// tg2.expand(); //расширяем на все окно
+tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
 tg2.MainButton.setText("Разместить объявление"); //изменяем текст кнопки иначе
