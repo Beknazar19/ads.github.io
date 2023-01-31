@@ -87,7 +87,7 @@ tg2.MainButton.enable();
 
 
 tg2.onEvent('mainButtonClicked', function(){
-  tg.sendData(dict);
+  tg2.sendData(dict);
   // tg2.sendData("От страницы ADS");
 
   tg2.window.close();
