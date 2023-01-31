@@ -50,13 +50,13 @@ document.getElementById('kurs').addEventListener('input', function() {
 });
 
 var value_opt1 =  document.getElementById("select_group_1").value;
-var value_opt2 =  document.getElementById("select_group_2").value;
-var value_opt3 =  document.getElementById("select_group_3").value;
-var value_opt4 =  document.getElementById("select_group_4").value;
-var value_opt5 =  document.getElementById("select_group_5").value;
-var value_opt6 =  document.getElementById("select_group_6").value;
+// var value_opt2 =  document.getElementById("select_group_2").value;
+// var value_opt3 =  document.getElementById("select_group_3").value;
+// var value_opt4 =  document.getElementById("select_group_4").value;
+// var value_opt5 =  document.getElementById("select_group_5").value;
+// var value_opt6 =  document.getElementById("select_group_6").value;
 
-// var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
+var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
 // var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
 // var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
 // var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
@@ -74,7 +74,7 @@ var value_opt6 =  document.getElementById("select_group_6").value;
 //     value_opt6 : text_stamp_bid
 // };
 
-var jsonObject = { "name": "John", "age": value_opt1, "city": "New York" };
+var jsonObject = { "name": "John", value_opt1: text_val_ask, "city": "New York" };
 var jsonString = JSON.stringify(jsonObject);
 
 var  tg2 = window.Telegram.WebApp;
