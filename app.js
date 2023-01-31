@@ -64,17 +64,17 @@ document.getElementById('kurs').addEventListener('input', function() {
 // var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 
-var dict = {
-    "type_web_msg" : "from ads"
-    // value_opt1 : text_val_ask,
-    // value_opt2 : text_nal_ask,
-    // value_opt3 : text_stamp_ask,
-    // value_opt4 : text_val_bid,
-    // value_opt5 : text_nal_bid,
-    // value_opt6 : text_stamp_bid
+var jsonObject = {
+    "type_web_msg" : "from ads",
+    value_opt1 : text_val_ask,
+    value_opt2 : text_nal_ask,
+    value_opt3 : text_stamp_ask,
+    value_opt4 : text_val_bid,
+    value_opt5 : text_nal_bid,
+    value_opt6 : text_stamp_bid
 };
 
-var jsonObject = { "name": "John", "age": 30, "city": "New York" };
+// var jsonObject = { "name": "John", "age": 30, "city": "New York" };
 var jsonString = JSON.stringify(jsonObject);
 
 var  tg2 = window.Telegram.WebApp;
