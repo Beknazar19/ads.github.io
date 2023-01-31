@@ -3,10 +3,9 @@
 let tg2 = window.Telegram.WebApp;
 // tg2.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
-tg2.expand(); //расширяем на все окно
 
-var val_ask = document.getElementById("select_group_1");
-var val_bid = document.getElementById("select_group_4");
+// var val_ask = document.getElementById("select_group_1");
+// var val_bid = document.getElementById("select_group_4");
 
 // function onChange() {
 //     var val_ask_num = val_ask.value;
@@ -52,6 +51,7 @@ var val_bid = document.getElementById("select_group_4");
 
 
 
+tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
 tg2.MainButton.setText("Разместить объявление"); //изменяем текст кнопки иначе
