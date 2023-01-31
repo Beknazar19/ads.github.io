@@ -86,11 +86,10 @@
          value_opt6 : text_stamp_bid
       };
 
-      var dictstring = JSON.stringify(dict);
-      console.log(dictstring);
-         // tg2.sendData(dictstring);
+      tg2.onEvent('mainButtonClicked', function(){
+        // tg.sendData(dictstring);
+        tg2.sendData("Разместили Объявление");
 
-      Telegram.WebApp.onEvent('mainButtonClicked', function(){
-         tg2.sendData("Это пришло от веб страницы web app");
-         tg2.window.close();
-      });
+        tg2.window.close();
+        //при клике на основную кнопку отправляем данные в строковом виде
+     });
