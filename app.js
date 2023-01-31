@@ -1,24 +1,24 @@
 
 
-let tg = window.Telegram.WebApp;
-tg.expand(); //расширяем на все окно
+let tg2 = window.Telegram.WebApp;
+tg2.expand(); //расширяем на все окно
 
-tg.MainButton.text = "Готово"; //изменяем текст кнопки
-tg.MainButton.setText("Кнопка для поиска"); //изменяем текст кнопки иначе
-tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
-tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-tg.MainButton.show();
-tg.MainButton.enable();
+tg2.MainButton.text = "Готово"; //изменяем текст кнопки
+tg2.MainButton.setText("Разместить мое объявление"); //изменяем текст кнопки иначе
+tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+tg2.MainButton.show();
+tg2.MainButton.enable();
 
 var dict = {
    type_web_msg : "from search"
 };
 
-tg.onEvent('mainButtonClicked', function(){
-   // tg.sendData(dictstring);
-   tg.sendData("дать предложение22");
+tg2.onEvent('mainButtonClicked', function(){
+   // tg2.sendData(dictstring);
+   tg2.sendData("дать предложение");
 
-   tg.window.close();
+   tg2.window.close();
    //при клике на основную кнопку отправляем данные в строковом виде
 });
