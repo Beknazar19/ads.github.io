@@ -54,7 +54,7 @@
       tg2.expand(); //расширяем на все окно
 
       tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-      tg2.MainButton.setText("Готово for Bek"); //изменяем текст кнопки иначе
+      tg2.MainButton.setText("Разместить объявление"); //изменяем текст кнопки иначе
       tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
       tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
       tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -88,7 +88,7 @@
 
       tg2.onEvent('mainButtonClicked', function(){
         // tg.sendData(dictstring);
-        tg2.sendData("Разместили Объявление");
+        tg2.sendData("От страницы ADS");
 
         tg2.window.close();
         //при клике на основную кнопку отправляем данные в строковом виде
