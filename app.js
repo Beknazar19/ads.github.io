@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 6"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 7"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -98,12 +98,7 @@ kurs.onchange = onChange;
 Label_Sum.onchange = onChange;
 value_opt7.onchange = onChange;
 
-
-
 // onChange();
-
-
-
 
 //задаем формат для поле объем, чтобы только цифры были
 document.getElementById('summary').addEventListener('input', function() {
@@ -123,8 +118,9 @@ document.getElementById('kurs').addEventListener('input', function() {
 
 
 tg2.onEvent('mainButtonClicked', function(){
-  tg2.sendData(jsonString);
-  // tg2.sendData("От страницы ADS");
+  // tg2.sendData(jsonString);
+  tg2.sendData("От страницы ADS");
+  console.log(text_place);
 
   tg2.window.close();
   //при клике на основную кнопку отправляем данные в строковом виде
