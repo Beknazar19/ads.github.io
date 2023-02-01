@@ -50,32 +50,32 @@ document.getElementById('kurs').addEventListener('input', function() {
 });
 
 var value_opt1 =  document.getElementById("select_group_1");
-// var value_opt2 =  document.getElementById("select_group_2").value;
-// var value_opt3 =  document.getElementById("select_group_3").value;
-// var value_opt4 =  document.getElementById("select_group_4").value;
-// var value_opt5 =  document.getElementById("select_group_5").value;
-// var value_opt6 =  document.getElementById("select_group_6").value;
+var value_opt2 =  document.getElementById("select_group_2");
+var value_opt4 =  document.getElementById("select_group_4");
+var value_opt3 =  document.getElementById("select_group_3");
+var value_opt5 =  document.getElementById("select_group_5");
+var value_opt6 =  document.getElementById("select_group_6");
 
 var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
-// var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
-// var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
-// var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
-// var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
-// var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
+var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
+var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
+var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
+var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
+var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 
-// var jsonObject = {
-//     "type_web_msg" : "from ads"
-//     ,value_opt1 : text_val_ask,
-//     value_opt2 : text_nal_ask,
-//     value_opt3 : text_stamp_ask,
-//     value_opt4 : text_val_bid,
-//     value_opt5 : text_nal_bid,
-//     value_opt6 : text_stamp_bid
-// };
+var jsonObject = {
+    // "type_web_msg" : "from ads",
+    "text_val_ask" : text_val_ask,
+    "text_nal_ask" : text_nal_ask,
+    "text_stamp_ask" : text_stamp_ask,
+    "text_val_bid" : text_val_bid,
+    "text_nal_bid" : text_nal_bid,
+    "text_stamp_bid" : text_stamp_bid
+};
 
-var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
-console.log(text_val_ask);
+// var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
+// console.log(text_val_ask);
 
 var jsonString = JSON.stringify(jsonObject);
 
