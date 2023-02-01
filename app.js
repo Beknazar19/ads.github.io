@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 11"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 12"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -107,8 +107,8 @@ value_opt2.onchange = onChange;
 value_opt3.onchange = onChange;
 value_opt5.onchange = onChange;
 value_opt6.onchange = onChange;
-kurs.onchange = onChange;
-Label_Sum.onchange = onChange;
+// kurs.onchange = onChange;
+// Label_Sum.onchange = onChange;
 value_opt7.onchange = onChange;
 
 
@@ -131,6 +131,7 @@ console.log(e.target.value)
 window.Label_Sum_value = e.target.value
 });
 
+onChange();
 
 
 tg2.onEvent('mainButtonClicked', function(){
