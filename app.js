@@ -16,6 +16,18 @@ tg2.MainButton.enable();
 var val_ask = document.getElementById("select_group_1");
 var val_bid = document.getElementById("select_group_4");
 
+var value_opt1 =  document.getElementById("select_group_1");
+var value_opt2 =  document.getElementById("select_group_2");
+var value_opt4 =  document.getElementById("select_group_4");
+var value_opt3 =  document.getElementById("select_group_3");
+var value_opt5 =  document.getElementById("select_group_5");
+var value_opt6 =  document.getElementById("select_group_6");
+var value_opt7 =  document.getElementById("select_group_7");
+
+
+var kurs = document.getElementById("kurs");
+var Label_Sum = document.getElementById("summary");
+
 function onChange() {
     var val_ask_num = val_ask.value;
     var val_ask_text = val_ask.options[val_ask.selectedIndex].text;
@@ -29,21 +41,66 @@ function onChange() {
     let selectElement = document.getElementById('select_group_1');
     let options = selectElement.options;
 
+
+
+    var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
+    var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
+    var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
+    var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
+    var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
+    var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
+    var text_place = value_opt7.options[value_opt7.selectedIndex].text;
+
+
+
+    var kurs_value = kurs.value;
+    var Label_Sum_value= Label_Sum.value;
+
+
+    var jsonObject = {
+        // "type_web_msg" : "from ads",
+        "text_val_ask" : text_val_ask,
+        "text_nal_ask" : text_nal_ask,
+        "text_stamp_ask" : text_stamp_ask,
+        "text_val_bid" : text_val_bid,
+        "text_nal_bid" : text_nal_bid,
+        "text_stamp_bid" : text_stamp_bid,
+        "kurs_value" : kurs_value,
+        "Label_Sum": Label_Sum_value,
+        "text_place": text_place
+    };
+
+    // var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
+    console.log(text_val_ask);
+
+    var jsonString = JSON.stringify(jsonObject);
+
     for (let i = 0; i < options.length; i++) {
         if (options[i].value == searchValue) {
-        console.log(options[i].text, document.getElementById('summary').innerHTML);
+        // console.log(options[i].text, document.getElementById('summary').innerHTML);
 
         document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
         // + options[i].text;
 
         break;
         } }
+
+
 }
 
 val_ask.onchange = onChange;
 val_bid.onchange = onChange;
+value_opt2.onchange = onChange;
+value_opt3.onchange = onChange;
+value_opt5.onchange = onChange;
+value_opt6.onchange = onChange;
+kurs.onchange = onChange;
+Label_Sum.onchange = onChange;
+value_opt7.onchange = onChange;
 
-    onChange();
+
+
+// onChange();
 
 
 
@@ -59,41 +116,7 @@ document.getElementById('kurs').addEventListener('input', function() {
     // .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$0 ');
 });
 
-var value_opt1 =  document.getElementById("select_group_1");
-var value_opt2 =  document.getElementById("select_group_2");
-var value_opt4 =  document.getElementById("select_group_4");
-var value_opt3 =  document.getElementById("select_group_3");
-var value_opt5 =  document.getElementById("select_group_5");
-var value_opt6 =  document.getElementById("select_group_6");
 
-var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
-var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
-var text_stamp_ask = value_opt3.options[value_opt3.selectedIndex].text;
-var text_val_bid = value_opt4.options[value_opt4.selectedIndex].text;
-var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
-var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
-
-
-var kurs_value = document.getElementById("kurs").value;
-var Label_Sum = document.getElementById("Label_Sum").value;
-
-
-var jsonObject = {
-    // "type_web_msg" : "from ads",
-    "text_val_ask" : text_val_ask,
-    "text_nal_ask" : text_nal_ask,
-    "text_stamp_ask" : text_stamp_ask,
-    "text_val_bid" : text_val_bid,
-    "text_nal_bid" : text_nal_bid,
-    "text_stamp_bid" : text_stamp_bid,
-    "kurs_value" : kurs_value,
-    "Label_Sum": Label_Sum
-};
-
-// var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
-// console.log(text_val_ask);
-
-var jsonString = JSON.stringify(jsonObject);
 
 
 
