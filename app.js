@@ -64,6 +64,10 @@ var text_nal_bid = value_opt5.options[value_opt5.selectedIndex].text;
 var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
 
 
+var kurs_value = document.getElementById("kurs").value;
+var Label_Sum = document.getElementById("Label_Sum").value;
+
+
 var jsonObject = {
     // "type_web_msg" : "from ads",
     "text_val_ask" : text_val_ask,
@@ -71,7 +75,9 @@ var jsonObject = {
     "text_stamp_ask" : text_stamp_ask,
     "text_val_bid" : text_val_bid,
     "text_nal_bid" : text_nal_bid,
-    "text_stamp_bid" : text_stamp_bid
+    "text_stamp_bid" : text_stamp_bid,
+    "kurs_value" : kurs_value,
+    "Label_Sum": Label_Sum
 };
 
 // var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
