@@ -10,12 +10,32 @@ tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются в
 tg2.MainButton.show();
 tg2.MainButton.enable();
 
-// tg2.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+
+//задаем формат для поле объем, чтобы только цифры были
+document.getElementById('summary').addEventListener('input', function() {
+  this.value = this.value.replace(/[^\d]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
+});
+
+//задаем формат для поле курс, чтобы только цифры были
+document.getElementById('kurs').addEventListener('input', function() {
+  this.value = this.value.replace(/[^0-9.]/g, '', '')
+  // .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$0 ');
+});
 
 
-var val_ask = document.getElementById("select_group_1");
-var val_bid = document.getElementById("select_group_4");
+// При изменении полей Курса и Оборота, забираем значения в поляхх
+var kurs = document.getElementById("kurs");
+var Label_Sum = document.getElementById("summary");
+kurs.addEventListener("input", (e)=> {
+console.log(e.target.value)
+window.kurs_value = e.target.value
+});
+Label_Sum.addEventListener("input", (e)=> {
+console.log(e.target.value)
+window.Label_Sum_value = e.target.value
+});
 
+// Задаем селекты
 var value_opt1 =  document.getElementById("select_group_1");
 var value_opt2 =  document.getElementById("select_group_2");
 var value_opt4 =  document.getElementById("select_group_4");
@@ -25,23 +45,10 @@ var value_opt6 =  document.getElementById("select_group_6");
 var value_opt7 =  document.getElementById("select_group_7");
 
 
-var kurs = document.getElementById("kurs");
-var Label_Sum = document.getElementById("summary");
+// var kurs = document.getElementById("kurs");
+// var Label_Sum = document.getElementById("summary");
 
 function onChange() {
-    var val_ask_num = val_ask.value;
-    var val_ask_text = val_ask.options[val_ask.selectedIndex].text;
-
-    var val_bid_num = val_bid.value;
-    var val_bid_text = val_bid.options[val_bid.selectedIndex].text;
-
-
-
-    let searchValue = Math.min(val_ask_num, val_bid_num);
-    let selectElement = document.getElementById('select_group_1');
-    let options = selectElement.options;
-
-
 
     var text_val_ask = value_opt1.options[value_opt1.selectedIndex].text;
     var text_nal_ask = value_opt2.options[value_opt2.selectedIndex].text;
@@ -51,24 +58,35 @@ function onChange() {
     var text_stamp_bid = value_opt6.options[value_opt6.selectedIndex].text;
     var text_place = value_opt7.options[value_opt7.selectedIndex].text;
 
+    var val_ask_num = value_opt1.value;
+    // var val_ask_text = value_opt1.options[value_opt1.selectedIndex].text;
+
+    var val_bid_num = value_opt4.value;
+    // var val_bid_text = value_opt4.options[value_opt4.selectedIndex].text;
 
 
-    // var kurs_value = kurs.value;
-    // document.getElementById('kurs').addEventListener('input', function() { });
-    // document.getElementById('summary').addEventListener('input', function() { });
 
-    // var input = document.getElementById("id_message_average");
-    kurs.addEventListener("input", ()=>{
-      window.kurs_value = kurs.value;
-    });
+    let searchValue = Math.min(val_ask_num, val_bid_num);
+    let selectElement = document.getElementById('select_group_1');
+    let options = selectElement.options;
 
-    Label_Sum.addEventListener("input", ()=>{
-      window.Label_Sum_value = Label_Sum.value;
-    });
-      // window.Label_Sum_value = this.value;
-      // this.value = this.value.replace(/[^\d]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].value == searchValue) {
+      // console.log(options[i].text, document.getElementById('summary').innerHTML);
 
+      document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
+      // + options[i].text;
+
+      break;
+      } }
+
+
+    var kurs = document.getElementById("kurs");
+    var Label_Sum = document.getElementById("summary");
+
+    var kurs_value= kurs.value;
     var Label_Sum_value= Label_Sum.value;
+
 
     var jsonObject = {
         // "type_web_msg" : "from ads",
@@ -84,45 +102,27 @@ function onChange() {
     };
 
     // var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
-    console.log(Label_Sum_value);
+    // console.log(Label_Sum_value);
 
     window.jsonString = JSON.stringify(jsonObject);
 
-    for (let i = 0; i < options.length; i++) {
-        if (options[i].value == searchValue) {
-        // console.log(options[i].text, document.getElementById('summary').innerHTML);
 
-        document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
-        // + options[i].text;
-
-        break;
-        } }
 
 
 }
 
-val_ask.onchange = onChange;
-val_bid.onchange = onChange;
+value_opt1.onchange = onChange;
+value_opt4.onchange = onChange;
 value_opt2.onchange = onChange;
 value_opt3.onchange = onChange;
 value_opt5.onchange = onChange;
 value_opt6.onchange = onChange;
-kurs.onchange = onChange;
-Label_Sum.onchange = onChange;
+// kurs.onchange = onChange;
+// Label_Sum.onchange = onChange;
 value_opt7.onchange = onChange;
 
+
 // onChange();
-
-//задаем формат для поле объем, чтобы только цифры были
-document.getElementById('summary').addEventListener('input', function() {
-    this.value = this.value.replace(/[^\d]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
-});
-
-//задаем формат для поле курс, чтобы только цифры были
-document.getElementById('kurs').addEventListener('input', function() {
-    this.value = this.value.replace(/[^0-9.]/g, '', '')
-    // .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$0 ');
-});
 
 
 
@@ -133,7 +133,7 @@ document.getElementById('kurs').addEventListener('input', function() {
 tg2.onEvent('mainButtonClicked', function(){
   tg2.sendData(jsonString);
   // tg2.sendData("От страницы ADS");
-  console.log(text_place);
+  // console.log(text_place);
 
   tg2.window.close();
   //при клике на основную кнопку отправляем данные в строковом виде
