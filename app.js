@@ -1,4 +1,14 @@
+var  tg2 = window.Telegram.WebApp;
 
+tg2.expand(); //расширяем на все окно
+
+tg2.MainButton.text = "Готово"; //изменяем текст кнопки
+tg2.MainButton.setText("Разместить объявление 6"); //изменяем текст кнопки иначе
+tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+tg2.MainButton.show();
+tg2.MainButton.enable();
 
 // tg2.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
@@ -33,7 +43,7 @@ function onChange() {
 val_ask.onchange = onChange;
 val_bid.onchange = onChange;
 
-    // onChange();
+    onChange();
 
 
 
@@ -85,17 +95,7 @@ var jsonObject = {
 
 var jsonString = JSON.stringify(jsonObject);
 
-var  tg2 = window.Telegram.WebApp;
 
-tg2.expand(); //расширяем на все окно
-
-tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 5"); //изменяем текст кнопки иначе
-tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
-tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
-tg2.MainButton.show();
-tg2.MainButton.enable();
 
 
 
