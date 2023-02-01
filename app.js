@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 12"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 13"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -21,6 +21,34 @@ document.getElementById('kurs').addEventListener('input', function() {
   this.value = this.value.replace(/[^0-9.]/g, '', '')
   // .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$0 ');
 });
+
+
+
+
+
+// При изменении полей Курса и Оборота, забираем значения в поляхх
+// var kurs = document.getElementById("kurs");
+// var Label_Sum = document.getElementById("summary");
+// var kurs_value;
+
+// // kurs.addEventListener("input", (e)=> {
+
+// //   kurs_value = e.target.value;
+
+// // });
+// // console.log(kurs_value);
+// var Label_Sum_value2
+
+// Label_Sum.addEventListener("input", (e)=> {
+
+// window.Label_Sum_value2 = e.target.value;
+// });
+
+
+// console.log(Label_Sum_value2);
+
+
+
 
 
 
@@ -97,8 +125,6 @@ function onChange() {
     window.jsonString = JSON.stringify(jsonObject);
 
 
-
-
 }
 
 value_opt1.onchange = onChange;
@@ -107,31 +133,15 @@ value_opt2.onchange = onChange;
 value_opt3.onchange = onChange;
 value_opt5.onchange = onChange;
 value_opt6.onchange = onChange;
-// kurs.onchange = onChange;
-// Label_Sum.onchange = onChange;
+kurs.onEvent = onChange;
+Label_Sum.onEvent = onChange;
 value_opt7.onchange = onChange;
 
 
 // onChange();
 
 
-
-// При изменении полей Курса и Оборота, забираем значения в поляхх
-var kurs = document.getElementById("kurs");
-var Label_Sum = document.getElementById("summary");
-kurs.addEventListener("input", (e)=> {
-console.log(e.target.value)
-window.kurs_value = e.target.value
-});
-var kurs_value= kurs_value;
-var Label_Sum_value= Label_Sum.value;
-
-Label_Sum.addEventListener("input", (e)=> {
-console.log(e.target.value)
-window.Label_Sum_value = e.target.value
-});
-
-onChange();
+// onChange();
 
 
 tg2.onEvent('mainButtonClicked', function(){
