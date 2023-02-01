@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 7"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 8"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -73,7 +73,7 @@ function onChange() {
     // var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
     console.log(text_val_ask);
 
-    var jsonString = JSON.stringify(jsonObject);
+    window.jsonString = JSON.stringify(jsonObject);
 
     for (let i = 0; i < options.length; i++) {
         if (options[i].value == searchValue) {
