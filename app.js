@@ -118,8 +118,8 @@ document.getElementById('kurs').addEventListener('input', function() {
 
 
 tg2.onEvent('mainButtonClicked', function(){
-  // tg2.sendData(jsonString);
-  tg2.sendData("От страницы ADS");
+  tg2.sendData(jsonString);
+  // tg2.sendData("От страницы ADS");
   console.log(text_place);
 
   tg2.window.close();
