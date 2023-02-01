@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 13"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 14"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -31,12 +31,12 @@ document.getElementById('kurs').addEventListener('input', function() {
 // var Label_Sum = document.getElementById("summary");
 // var kurs_value;
 
-// // kurs.addEventListener("input", (e)=> {
+// kurs.addEventListener("input", (e)=> {
 
-// //   kurs_value = e.target.value;
+//   kurs_value = e.target.value;
 
-// // });
-// // console.log(kurs_value);
+// });
+// console.log(kurs_value);
 // var Label_Sum_value2
 
 // Label_Sum.addEventListener("input", (e)=> {
@@ -47,12 +47,6 @@ document.getElementById('kurs').addEventListener('input', function() {
 
 // console.log(Label_Sum_value2);
 
-
-
-
-
-
-
 // Задаем селекты
 var value_opt1 =  document.getElementById("select_group_1");
 var value_opt2 =  document.getElementById("select_group_2");
@@ -62,9 +56,8 @@ var value_opt5 =  document.getElementById("select_group_5");
 var value_opt6 =  document.getElementById("select_group_6");
 var value_opt7 =  document.getElementById("select_group_7");
 
-
-// var kurs = document.getElementById("kurs");
-// var Label_Sum = document.getElementById("summary");
+var kurs = document.getElementById("kurs");
+var Label_Sum = document.getElementById("summary");
 
 function onChange() {
 
@@ -99,8 +92,8 @@ function onChange() {
       } }
 
 
-    var kurs = document.getElementById("kurs");
-    var Label_Sum = document.getElementById("summary");
+    // var kurs = document.getElementById("kurs");
+    // var Label_Sum = document.getElementById("summary");
 
     var kurs_value= kurs.value;
     var Label_Sum_value= Label_Sum.value;
@@ -133,18 +126,19 @@ value_opt2.onchange = onChange;
 value_opt3.onchange = onChange;
 value_opt5.onchange = onChange;
 value_opt6.onchange = onChange;
-kurs.onEvent = onChange;
-Label_Sum.onEvent = onChange;
+kurs.onchange = onChange;
+Label_Sum.onchange = onChange;
 value_opt7.onchange = onChange;
 
 
 // onChange();
 
 
-// onChange();
 
 
 tg2.onEvent('mainButtonClicked', function(){
+  onChange();
+
   tg2.sendData(jsonString);
   // tg2.sendData("От страницы ADS");
   // console.log(text_place);
