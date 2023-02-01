@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 10"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 11"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -23,17 +23,7 @@ document.getElementById('kurs').addEventListener('input', function() {
 });
 
 
-// При изменении полей Курса и Оборота, забираем значения в поляхх
-var kurs = document.getElementById("kurs");
-var Label_Sum = document.getElementById("summary");
-kurs.addEventListener("input", (e)=> {
-console.log(e.target.value)
-window.kurs_value = e.target.value
-});
-Label_Sum.addEventListener("input", (e)=> {
-console.log(e.target.value)
-window.Label_Sum_value = e.target.value
-});
+
 
 // Задаем селекты
 var value_opt1 =  document.getElementById("select_group_1");
@@ -126,7 +116,20 @@ value_opt7.onchange = onChange;
 
 
 
+// При изменении полей Курса и Оборота, забираем значения в поляхх
+var kurs = document.getElementById("kurs");
+var Label_Sum = document.getElementById("summary");
+kurs.addEventListener("input", (e)=> {
+console.log(e.target.value)
+window.kurs_value = e.target.value
+});
+var kurs_value= kurs_value;
+var Label_Sum_value= Label_Sum.value;
 
+Label_Sum.addEventListener("input", (e)=> {
+console.log(e.target.value)
+window.Label_Sum_value = e.target.value
+});
 
 
 
