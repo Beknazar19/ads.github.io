@@ -53,9 +53,22 @@ function onChange() {
 
 
 
-    var kurs_value = kurs.value;
-    var Label_Sum_value= Label_Sum.value;
+    // var kurs_value = kurs.value;
+    // document.getElementById('kurs').addEventListener('input', function() { });
+    // document.getElementById('summary').addEventListener('input', function() { });
 
+    // var input = document.getElementById("id_message_average");
+    kurs.addEventListener("input", ()=>{
+      window.kurs_value = kurs.value;
+    });
+
+    Label_Sum.addEventListener("input", ()=>{
+      window.Label_Sum_value = Label_Sum.value;
+    });
+      // window.Label_Sum_value = this.value;
+      // this.value = this.value.replace(/[^\d]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
+
+    var Label_Sum_value= Label_Sum.value;
 
     var jsonObject = {
         // "type_web_msg" : "from ads",
@@ -71,7 +84,7 @@ function onChange() {
     };
 
     // var jsonObject = { "name": "John", "text_val_ask" : text_val_ask, "city": "New York" };
-    console.log(text_val_ask);
+    console.log(Label_Sum_value);
 
     window.jsonString = JSON.stringify(jsonObject);
 
