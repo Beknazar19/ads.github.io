@@ -24,29 +24,6 @@ document.getElementById('kurs').addEventListener('input', function() {
 
 
 
-
-
-// При изменении полей Курса и Оборота, забираем значения в поляхх
-// var kurs = document.getElementById("kurs");
-// var Label_Sum = document.getElementById("summary");
-// var kurs_value;
-
-// kurs.addEventListener("input", (e)=> {
-
-//   kurs_value = e.target.value;
-
-// });
-// console.log(kurs_value);
-// var Label_Sum_value2
-
-// Label_Sum.addEventListener("input", (e)=> {
-
-// window.Label_Sum_value2 = e.target.value;
-// });
-
-
-// console.log(Label_Sum_value2);
-
 // Задаем селекты
 var value_opt1 =  document.getElementById("select_group_1");
 var value_opt2 =  document.getElementById("select_group_2");
@@ -86,6 +63,7 @@ function onChange() {
       // console.log(options[i].text, document.getElementById('summary').innerHTML);
 
       document.getElementById('Label_Sum').innerHTML = 'Объем, в ' + options[i].text.substring(0, 3);
+      window.sum_val_name = options[i].text
       // + options[i].text;
 
       break;
@@ -109,6 +87,7 @@ function onChange() {
         "text_stamp_bid" : text_stamp_bid,
         "kurs_value" : kurs_value,
         "Label_Sum": Label_Sum_value,
+        "sum_val_name": sum_val_name,
         "text_place": text_place
     };
 
@@ -129,11 +108,6 @@ value_opt6.onchange = onChange;
 kurs.onchange = onChange;
 Label_Sum.onchange = onChange;
 value_opt7.onchange = onChange;
-
-
-// onChange();
-
-
 
 
 tg2.onEvent('mainButtonClicked', function(){
