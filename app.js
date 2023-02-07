@@ -3,7 +3,7 @@ var  tg2 = window.Telegram.WebApp;
 tg2.expand(); //расширяем на все окно
 
 tg2.MainButton.text = "Готово"; //изменяем текст кнопки
-tg2.MainButton.setText("Разместить объявление 15"); //изменяем текст кнопки иначе
+tg2.MainButton.setText("Разместить объявление 16"); //изменяем текст кнопки иначе
 tg2.MainButton.textColor = "#e7e8e9"; //изменяем цвет текста кнопки
 tg2.MainButton.color = "#4682B4"; //изменяем цвет бэкграунда кнопки
 tg2.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
