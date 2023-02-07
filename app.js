@@ -78,7 +78,7 @@ function onChange() {
 
 
     var jsonObject = {
-        // "type_web_msg" : "from ads",
+        "type_web_msg" : "from ads",
         "text_val_ask" : text_val_ask,
         "text_nal_ask" : text_nal_ask,
         "text_stamp_ask" : text_stamp_ask,
